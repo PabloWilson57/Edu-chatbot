@@ -29,8 +29,9 @@ async function sendMessageToServer(message) {
     },
     body: JSON.stringify({ message })
   });
-  console.log(response);
-  const data = await response;
+  const data_json = await response.json();
+  console.log(data_json);
+  const data = data_json;
   dialoguedata.push({Question : message , Answer : data.message});
   // console.log(data)
   return data.message;
