@@ -12,7 +12,8 @@ router.post('/message', async (req, res) => {
       senderId: "",
       message: result.response
     };
-    res.json(response);
+    res.set('Content-Type' ,'text/html');
+    res.send(result.response);
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: 'Internal Server Error' });

@@ -29,12 +29,12 @@ async function sendMessageToServer(message) {
     },
     body: JSON.stringify({ message })
   });
-  const data_json = await response.json;
+  const data_json = (await response.text()).toString();
   console.log(data_json);
   const data = data_json;
-  dialoguedata.push({Question : message , Answer : data.message});
+  dialoguedata.push({Question : message , Answer : data});
   // console.log(data)
-  return data.message;
+  return data;
 }
 
 function download(){
