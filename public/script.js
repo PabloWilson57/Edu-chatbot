@@ -31,10 +31,9 @@ async function sendMessageToServer(message) {
   });
   const data_json = await response.text().toString();
   console.log(data_json);
-  const data = data_json;
-  dialoguedata.push({Question : message , Answer : data});
+  dialoguedata.push({Question : message , Answer : data_json});
   // console.log(data)
-  return data;
+  return data_json;
 }
 
 function download(){
