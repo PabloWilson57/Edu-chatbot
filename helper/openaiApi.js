@@ -13,11 +13,6 @@ const chatCompletion = async (prompt) => {
         const response = await openai.chat.completions.create({
             model: 'gpt-3.5-turbo',
             messages: [
-                // company information
-                // { "role": "system", "content": about_bizzman_data },
-                // areas of expertise
-                // { "role": "system", "content": company_information_data },
-                // key benefit
                 { "role": "system", "content": education },
                 { "role": "user", "content": prompt }
             ],

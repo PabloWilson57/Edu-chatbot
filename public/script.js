@@ -30,7 +30,7 @@ async function sendMessageToServer(message) {
     body: JSON.stringify({ message })
   });
   console.log('receive');
-  const data = await response.json();
+  const data = response;
   dialoguedata.push({Question : message , Answer : data.message});
   // console.log(data)
   return data.message;
