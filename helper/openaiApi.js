@@ -1,7 +1,6 @@
 const axios = require('axios');
 require('dotenv').config();
 const { OpenAI } = require("openai");
-const fs = require('fs');
 
 const openai = new OpenAI({
     apiKey: process.env["Key1"] + process.env["Key2"],
@@ -9,7 +8,7 @@ const openai = new OpenAI({
 //it is working now.
 const chatCompletion = async (prompt) => {
     try {
-        const education = await fs.promises.readFile('training_data/educ1.txt', 'utf8');
+        const education ="Act like you're RMIT professor who teach students. You can reference this site to guide students. https://chat.openai.com/share/a5f2d4a0-1b46-4917-8c0c-107d225cbe6a And please answer shortly because students hate long explaination.";
         const response = await openai.chat.completions.create({
             model: 'gpt-3.5-turbo',
             messages: [
