@@ -8,7 +8,7 @@ const openai = new OpenAI({
 //it is working now.
 const chatCompletion = async (prompt) => {
     try {
-        const education = await fs.promises.readFile('training_data/edu1.txt', 'utf8');
+        const education = await fs.promises.readFile('training_data/educ1.txt', 'utf8');
         const response = await openai.chat.completions.create({
             model: 'gpt-3.5-turbo',
             messages: [
